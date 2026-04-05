@@ -859,5 +859,3 @@
 
 
 # print(dir())  # None
-
-print("Vitaju svit!fff")  # Vitaju svit!
