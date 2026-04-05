@@ -860,4 +860,4 @@
 
 # print(dir())  # None
 
-print("Vitaju svit!")  # Vitaju svit!
+print("Vitaju svit!fff")  # Vitaju svit!
