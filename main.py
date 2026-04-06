@@ -859,3 +859,16 @@
 
 
 # print(dir())  # None
+
+
+# Оператори и  операнди:
+# b = 5
+
+
+a = 5
+b = a
+
+c = a + b  # Оператор +, операнды a и b
+
+print(a is b)  # False
+print(c is a)  # False
