@@ -865,10 +865,99 @@
 # b = 5
 
 
-a = 5
-b = a
+# a = 5
+# b = a
 
-c = a + b  # Оператор +, операнды a и b
+# c = a + b  # Оператор +, операнды a и b
 
-print(a is b)  # False
-print(c is a)  # False
+# print(a is b)  # True
+# print(c is a)  # False
+
+
+# a = [1, 2, 3]
+# b = [1, 2, 3]
+
+# print(a == b)  # True
+
+# print(a.__eq__(b))  # True
+
+# print(a.__eq__) # <method-wrapper '__eq__' of list object at 0x7f8b8c8c8c8c>
+
+# print(id(a) == id(b))  # False
+
+# print(id(a))  # 140737488355328
+# print(hex(id(a)))  # 0x7f8b8c8c8c8c
+
+
+# print(dir(list))
+
+
+# - my_number
+# + my_number
+# not is_activated
+
+# Бинарные операторы и инфиксная нотация:
+# a = 5
+# a + 10
+# a +- 2
+# a += 3
+# a == 8
+# a and b
+# a = True
+# a + b
+# a += 5
+# a or b
+# a > b
+
+
+# my_num = 10
+
+# print(+my_num)  # 10
+
+# my_bool = False
+# print(+my_bool)  # True
+
+
+# Приоритетность операторов:
+# a + b * c / d - e
+# a + ((b * c)) / (d - e)
+# (((a + b) * c) / d) - e
+
+
+# D/Z:
+
+
+# my_set1 = {1, 2, 3, 4, 5}
+# my_set2 = {1, 2, 3, 4, 5}
+
+# print(id(my_set1) == id(my_set2))  # False
+
+# print(my_set1 == my_set2)  # or __eq__ True
+# print(my_set1 is my_set2)  # False
+
+# print(10 in my_set2)  # True
+# print(1 in my_set1)  # True
+
+# print(67 not in my_set1)  # True
+# print(2 not in my_set2)  # False
+
+
+# Ложный значения в Python - это значения, которые при приведении к булевому типу (bool) оцениваются как False. К ложным значениям относятся:
+# int 0
+# float 0.0
+# bool False
+# complex 0j
+# NoneType None
+# dict {}
+# set set()
+# list []
+# str ""
+
+# print(bool(0))  # False
+# print(not not {})
+
+
+my_list = [1, 2, 3]
+
+if len(my_list) > 0:
+    print("List is not empty!")
