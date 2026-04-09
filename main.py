@@ -1266,29 +1266,31 @@
 
 
 # good code:
-def image_info(dict):
-    if ("image_id" not in dict) or ("image_title" not in dict):
-        raise KeyError("Missing key in user_data!")
-    the_dict = f"Image {dict['image_title']} has id {dict['image_id']}."
-    return the_dict
+# def image_info(dict):
+#     if ("image_id" not in dict) or ("image_title" not in dict):
+#         raise KeyError("Missing key in user_data!")
+#     the_dict = f"Image {dict['image_title']} has id {dict['image_id']}."
+#     return the_dict
 
 
-image_data = {
-    "image_title": "Sunset",
-    "image_id": 12345
-}
+# image_data = {
+#     "image_title": "Sunset",
+#     "image_id": 12345
+# }
 
 
-try:
-    print(image_info(image_data))
+# try:
+#     print(image_info(image_data))
 
-except KeyError as e:
-    print(f"Missing key in user_data: {e}")
-except TypeError as e:
-    print(e)
+# except KeyError as e:
+#     print(f"Missing key in user_data: {e}")
+# except TypeError as e:
+#     print(e)
 
-else:
-    print("No errors occurred!")
+# else:
+#     print("No errors occurred!")
 
-finally:
-    print("Program continues...")
+# finally:
+#     print("Program continues...")
+
+
