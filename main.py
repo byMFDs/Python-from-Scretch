@@ -1294,3 +1294,161 @@
 #     print("Program continues...")
 
 
+# Расспаковка списков и кортежей:
+
+# list and tuple - это упорядоченные последовательности  элементов
+
+# Длинный вариант(плохой):
+
+# my_list = ["apple", "banana", "lime"]
+
+# my_apple = my_list[0]
+# my_bannana = my_list[1]
+# my_lime = my_list[2]
+
+# print(my_apple)  # apple
+# print(my_bannana)  # banana
+# print(my_lime)  # lime
+
+
+# #Хорошый вариант:
+
+# my_fruits = ["apple", "banana", "lime"]
+
+# my_apple, my_bannana, my_lime = my_fruits
+
+# print(my_apple)  # apple
+# print(my_bannana)  # banana
+# print(my_lime)  # lime
+
+
+# my_list = [1,2,3]
+
+# first, secound, third = my_list
+
+# print(first)  # 1
+# print(secound)  # 2
+# print(third)  # 3
+
+
+# my_fruits = ("apple", "banana", "lime")
+# print(type(my_fruits))  # <class 'tuple'>
+
+# my_apple, my_bannana, my_lime = my_fruits
+
+# print(my_apple)  # apple
+# print(my_bannana)  # banana
+# print(my_lime)  # lime
+
+
+# my_fruits = ["apple", "bannana", "lime"]
+
+# my_apple, *remaining_fruits = my_fruits
+
+# print(my_apple)  # apple
+# print(remaining_fruits)  # ['bannana', 'lime']
+
+# print(type(remaining_fruits))  # <class 'list'>
+
+
+# Рассспаковка словарей:
+
+# user_profile = {
+#     "name": "Danya",
+#     "comments_qty": 16
+# }
+
+
+# def user_info(name, comments_qty=0):
+#     if not comments_qty:
+#         return f"{name} has no comments."
+
+#     return f"{name} has {comments_qty} comments."
+
+
+# # Danya has 16 comments.
+# print(user_info(**user_profile))
+
+# or
+
+# print(user_info(name=user_profile["name"], comments_qty=user_profile["comments_qty"]))
+
+
+# user_profile = {
+#     "name": "Danya",
+#     "comments_qty": 16
+# }
+
+
+# def user_info(name, comments_qty=0):
+#     if not comments_qty:
+#         return f"{name} has no comments."
+
+#     return f"{name} has {comments_qty} comments."
+
+
+# name, comments_qty = user_profile
+# # Danya has 16 comments.
+# print(name)
+# print(comments_qty)
+
+# print(user_info(**user_profile))
+
+
+# Расспаковка списка в позицийные аргументы функции:\
+
+
+# user_data = ["Danya", 16]
+
+
+# def user_info(name, comments_qty=0):
+#     if not comments_qty:
+#         return f"{name} has no comments."
+
+#     return f"{name} has {comments_qty} comments."
+
+
+# print(user_info(*user_data))  # Danya has 16 comments.
+
+
+# the_list = [
+#     {"name": "Danya", "comments_qty": 16},
+#     {"name": "Alice", "comments_qty": 0},
+#     {"name": "Bob", "comments_qty": 8}
+# ]
+
+
+# the_dict1 = the_list[0]
+# the_dict2 = the_list[1]
+# the_dict3 = the_list[2]
+
+
+# def func(name, comments_qty=0):
+#     if not comments_qty:
+#         return f"{name} has no comments."
+
+#     return f"{name} has {comments_qty} comments."
+
+
+# print(func(**the_dict1))  # Danya has 16 comments.
+# print(func(**the_dict2))  # Alice has no comments.
+# print(func(**the_dict3))  # Bob has 8 comments.
+
+# OR
+
+# the_list = [
+#     {"name": "Danya", "comments_qty": 16},
+#     {"name": "Alice", "comments_qty": 0},
+#     {"name": "Bob", "comments_qty": 8}
+# ]
+
+
+# def func(name, comments_qty=0):
+#     if not comments_qty:
+#         return f"{name} has no comments."
+
+#     return f"{name} has {comments_qty} comments."
+
+
+# for user_data in the_list:
+#     print(func(**user_data))
