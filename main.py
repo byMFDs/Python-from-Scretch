@@ -1469,3 +1469,402 @@
 # )
 
 # print(response.output_text)
+
+
+# Условные конструкции:
+
+# if
+# if...else
+# if...elif
+
+# Тернарный оператор - это условное выражение, которое позволяет выбрать одно из двух значений в зависимости от условия. Он имеет следующую синтаксис: value_if_true if condition else value_if_false. Если условие истинно, возвращается value_if_true, иначе возвращается value_if_false.
+
+# Ложные значения в Python:
+# dict {}
+# list []
+# set set()
+# str ""
+# range range(0)
+
+# int 0
+# float 0.0
+# bool False
+# complex 0j
+# NoneType None
+
+# if Условие:
+#     # Блок кода, который выполняется, если условие истинно
+#     pass
+
+
+# my_number = 10
+
+# if my_number > 0:
+#     print("Number is greater than 0!")  # Number is greater than 0!
+
+
+# person_info = {
+#     "age": 20
+# }
+
+# if not person_info.get("name"):
+#     print("Имя отсутствует!")  # Имя отсутствует!
+
+
+# .get() - это метод словаря в Python, который используется для получения значения по ключу. Он принимает два аргумента: ключ, который нужно найти, и значение по умолчанию, которое возвращается, если ключ не найден. Если ключ существует в словаре, метод .get() возвращает его значение. Если ключ не существует, он возвращает значение по умолчанию (или None, если значение по умолчанию не указано). Метод .get() полезен для предотвращения ошибок KeyError при попытке доступа к несуществующему ключу в словаре.
+
+
+# print(not 0)  # True
+
+
+# if 10 > 2:
+#     print(True)  # True
+
+# if 10 > 2:
+#     print(True)  # True
+
+# if 10 > 2:
+#     print(True)  # True
+
+# if 10 > 2:
+#     print(True)  # True
+
+# isinstance - это функция которая проверяет тип данных.Принимает два значения экземпляр и тип данных(например int,str)
+# num_one = 10
+# num_two = 5.3
+
+# if ((num_one > 0) and (num_two > 0) and (isinstance(num_one, int)) and (isinstance(num_two, int))):
+#     # Both numbers are positive and of correct types!
+#     print("Both numbers are positive and of correct types!")
+
+
+# if Условие:
+#     # Блок кода, который выполняется, если Условие1 истинно
+#     pass
+# else:
+#     # Блок кода, который выполняется, если Условие1 ложно
+#     pass
+
+
+# my_number = 21.5
+
+# if type(my_number) is int:
+#     print("Number is an integer!")
+# else:
+#     print("Number is not an integer!")  # Number is not an integer!
+
+
+# my_phone = {
+#     "price": 1000,
+# }
+
+# if my_phone.get("brand"):
+#     print("Phone's brand is", my_phone["brand"])
+# else:
+#     print("Brand is not specified!")  # Brand is not specified!
+
+
+# if Условие_1:
+#     # Блок кода, который выполняется, если Условие_1 истинно
+#     pass
+# elif Условие_2:
+#     # Блок кода, который выполняется, если Условие_1 ложно и Условие_2 истинно
+#     pass
+# else:
+#     # Блок кода, который выполняется, если Условие_1 и Условие_2 ложны
+#     pass
+
+
+# my_number = -10
+
+# if my_number > 0:
+#     print(my_number, "Number is positive!")
+# elif my_number < 0:
+#     print(my_number, "Number is negative!")  # -10 Number is negative!
+# else:
+#     print(my_number, "Number is Zero!")
+
+
+# if в функциях:
+
+
+# def nums_info(a, b):
+#     if (type(a) is not int) or (type(b) is not int):
+#         return "Один из аргементов не целое число!"
+#     if a >= b:
+#         return f"{a} больше или равно {b}!"
+#     return f"{a} меньше {b}!"
+
+
+# print(nums_info(True, 10))  # Один из аргементов не целое число!
+# print(nums_info(10, 2))  # 10 больше или равно 5!
+# print(nums_info(5, 10))  # 5 меньше 10!
+
+
+# def nums_info(a, b):
+#     if (type(a) is not int) or (type(b) is not int):
+#         info = "Один из аргементов не целое число!"
+#     elif a >= b:
+#         info = f"{a} больше или равно {b}!"
+#     else:
+#         info = f"{a} меньше {b}!"
+#     return info
+
+
+# print(nums_info(True, 10))  # Один из аргементов не целое число!
+# print(nums_info(10, 2))  # 10 больше или равно 5!
+# print(nums_info(5, 10))  # 5 меньше 10!
+
+
+# D/Z:
+
+# def route_info(the_dict):
+#     if ("distance" in the_dict) and (isinstance(the_dict["distance"], int)):
+#         info = f"Distance to your disination is {the_dict['distance']}"
+#     elif ("speed" in the_dict) and ("time" in the_dict) and isinstance(the_dict["speed"], int) and isinstance(the_dict["time"], int):
+#         info = f"Distance to your destination is {the_dict['speed'] * the_dict['time']}"
+#     else:
+#         info = "No distance info is available!"
+#     return info
+
+
+# print(route_info({"distance": 100}))  # Distance to your disination is 100
+# # Distance to your destination is 100
+# print(route_info({"speed": 50, "time": 2}))
+# print(route_info({"My_name": "John"}))  # No distance info is available!
+
+
+# Теренарный оператор:
+
+# Выражение_1 if Условие else Выражение_2
+
+
+# send_img(img) if img.get["is_porcessed"] else process_and_send_img(img)
+
+# temp = +24
+
+# weather = "hot" if temp > 18 else "cold"
+# print(weather)
+
+
+# my_img = ("1920", "1080")
+
+# print(f"{my_img[0]}x{my_img[1]}") if len(
+#     my_img) == 2 else print("Incorrect image formatting!")
+
+
+# D/Z:
+
+# 1)
+# my_img = ("1920", "1080")
+
+# if len(my_img) == 2:
+#     print(f"{my_img[0]}x{my_img[1]}")
+# else:
+#     print("Incorrect image formatting!")
+
+
+# 2)
+
+# lenth = "Hello body! Im glad to see ypu broh! Whassup? I hope you are doing well!"
+
+# info = "The string is long!" if len(lenth) > 79 else "The string is short!"
+# print(info)  # The string is long!
+
+
+# Цыклы:
+
+# i = 10
+# print(i)  # 10
+# i *= 2
+
+# print(i)  # 20
+# i *= 2
+
+# print(i)  # 40
+# i *= 2
+
+
+# my_fruits = ["apple", "banana", "lime"]
+
+# print(my_fruits[0])  # apple
+# print(my_fruits[1])  # banana
+# print(my_fruits[2])  # lime
+
+
+# my_object = {
+#     "x": 10,
+#     "y": True,
+#     "z": "abc"
+# }
+
+# print(my_object["x"])  # 10
+# print(my_object["y"])  # True
+# print(my_object["z"])  # abc
+
+
+# Цыкл for in:
+
+# for Элемент in Последовательность:
+#     # Блок кода, который выполняется для каждого элемента в последовательности
+#     pass
+
+
+# my_list = [True, 10, "abc", {}]
+
+# for element in my_list:
+#     print(element)
+
+
+# my_object = {
+#     "x": 10,
+#     "y": True,
+#     "z": "abc"
+# }
+
+# for i in my_object:
+#     print(i, my_object[i])  # x y z
+
+
+# for i in [10, "Hello world!", False]:
+#     print(type(i))
+#     print(i)  # 10 20 30
+
+
+# for i in (10, "Hello world!", False):
+#     print(type(i))
+#     print(i)  # 10 20 30
+
+# my_dict = {"id": 324,
+#            "title": "My post",
+#            "is_published": True
+# }
+
+# for key in my_dict:
+#     print(type(key))
+#     print(key)  # 10 20 30
+#     print(my_dict[key])  # 324
+
+
+# for in для словарей и метод items():
+
+# my_object = {
+#     "x": 10,
+#     "y": True,
+# }
+
+# for item in my_object.items():
+#     key, value = item
+#     print(key, value)  # x 10 y True
+
+
+# my_dict = {"id": 324,
+#            "title": "My post",
+#            }
+
+# for key, value in my_dict.items():
+#     print(f"The key: {key}, The value: {value}")
+
+
+# Цыкл for in для строк:
+
+# my_name = "Daniel"
+
+# for i in my_name:
+#     print(i)
+
+# Цыкл for in для диапазонов(range):
+
+# for num in range(5):
+#     print(num)
+
+# for odd_num in range(3, 10, 2):
+#     print(odd_num)
+
+
+# D/Z:
+
+# Zadanie 1
+
+# def dict_to_list(the_dict):
+#     for key, value in the_dict.items():
+#         if isinstance(value, int):
+#             return f"The key: {key}, The value: {value * 2}"
+#         else:
+#             return f"The key: {key}, The value: {value}"
+
+
+# print(dict_to_list(the_dict={
+#     "price": 2000,
+#     "brand": "Mazda"
+# }))
+
+
+# def dict_to_list(the_dict):
+
+#     result_list = []
+
+#     for key, value in the_dict.items():
+#         if isinstance(value, int):
+#             value *= 2
+#         result_list.append((key, value))
+
+#     return result_list
+
+
+# my_data = {
+#     "price": 2000,
+#     "brand": "Mazda"
+# }
+
+# print(dict_to_list(my_data))
+# # [('price', 4000), ('brand', 'Mazda')]
+
+
+# Zadanie 2
+
+# def filter_list(the_list, value_type):
+
+#     new_list = []
+
+#     for i in the_list:
+#         if type(i) is value_type:
+#             new_list.append(i)
+
+#     return new_list
+
+
+# print(filter_list([35, True, "abc", 10], int))
+# print(filter_list([35, True, "abc", 10], str))
+# print(filter_list([35, True, "abc", 10], bool))
+
+
+# print(isinstance(True, bool))  # True
+# print(isinstance(True, int))  # True
+# print(isinstance(True, object))  # True
+# print(int.__subclasses__())  # [<class 'bool'>]
+
+
+# Сортировка списков с помощью функции filter():
+
+# Обычная функция:
+# def filter_list(list_to_filter, value_type):
+#     def check_element_type(element):
+#         return isinstance(element, value_type)
+
+#     return list(filter(check_element_type, list_to_filter))
+
+
+# res = (filter_list([1, 10, "abc", 5.5, False], int))
+# print(res)  # <filter object at 0x7f8b8c8c8c8c>
+
+
+# Лямбда функция:
+
+# def filter_list(list_to_filter, value_type):
+#     return list(filter(lambda element: type(element) is value_type,
+#                        list_to_filter))
+
+
+# res = (filter_list([1, 10, "abc", 5.5, False], int))
+# print(res)  # <filter object at 0x7f8b8c8c8c8c>
