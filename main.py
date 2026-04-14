@@ -1868,3 +1868,10 @@
 
 # res = (filter_list([1, 10, "abc", 5.5, False], int))
 # print(res)  # <filter object at 0x7f8b8c8c8c8c>
+
+
+# Цыкл while:
+
+# while Условие:
+# Блок кода выполняемый на каждой итерации
+# тернарный оператор -
