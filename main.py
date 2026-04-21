@@ -2265,19 +2265,55 @@
 
 # @staticmethod
 
+# class Comment:
+#     def __init__(self, text):
+#         self.text = text
+
+#     @staticmethod
+#     def merge_comments(first, second):
+#         return f"{first} {second}!"
+
+
+# my_comment = Comment("My Comment")
+
+# m1 = Comment.merge_comments("Thx", "Excellent!")
+# print(m1)
+
+# m2 = my_comment.merge_comments("Great", "OK!")
+# print(m2)
+
+
+# Магические методы в классах:
+
 class Comment:
     def __init__(self, text):
         self.text = text
+        self.votes_qty = 0
 
-    @staticmethod
-    def merge_comments(first, second):
-        return f"{first} {second}!"
+    def upvote(self):
+        self.votes_qty += 1
+
+    def __add__(self, other):
+        return {
+            "text": f"{self.text} {other.text}",
+            "total_qty": self.votes_qty + other.votes_qty
+        }
+        # return [f"{self.text} {other.text}", self.votes_qty + other.votes_qty]
+        # return f"{self.text} {other.text}", self.votes_qty + other.votes_qty
+
+    def __eq__(self, another):
+        # Вчимо Пайтон: два коментарі рівні, якщо в них однаковий текст І однакові лайки
+        return self.text == another.text and self.votes_qty == another.votes_qty
 
 
-my_comment = Comment("My Comment")
+first_comment = Comment("First comment btw")
+first_comment.upvote()  # +1
 
-m1 = Comment.merge_comments("Thx", "Excellent!")
-print(m1)
+second_comment = Comment("First comment btw")
+second_comment.upvote()  # +2
 
-m2 = my_comment.merge_comments("Great", "OK!")
-print(m2)
+
+# {'text': 'First comment btw Second comment btw', 'total_qty': 2}
+# print(first_comment + second_comment)
+
+print(first_comment == second_comment)
