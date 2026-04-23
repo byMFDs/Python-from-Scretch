@@ -2605,30 +2605,84 @@
 # print(result)
 
 
-def log_func_call(original_fn):
-    def wrapper(*args, **kwargs):
-        print(f"Function name is {original_fn.__name__}")
-        print(f"Function arguments are: {args}, {kwargs}")
-        result = original_fn(*args, **kwargs)
-        print(f"Function result: {result}")
-        return result
+# def log_func_call(original_fn):
+#     def wrapper(*args, **kwargs):
+#         print(f"Function name is {original_fn.__name__}")
+#         print(f"Function arguments are: {args}, {kwargs}")
+#         result = original_fn(*args, **kwargs)
+#         print(f"Function result: {result}")
+#         return result
 
-    return wrapper
-
-
-@log_func_call
-def main(a, b):
-    return a * b
+#     return wrapper
 
 
-print(main(2, 5))
-
-print('')
-
-
-@log_func_call
-def mult(a, b):
-    return a + b
+# @log_func_call
+# def main(a, b):
+#     return a * b
 
 
-print(mult(a=40.3, b=20.7))
+# print(main(2, 5))
+
+# print('')
+
+
+# @log_func_call
+# def mult(a, b):
+#     return a + b
+
+
+# print(mult(a=40.3, b=20.7))
+
+
+# def validate_args(fn):
+#     def wrapper(*args, **kwargs):
+#         for arg in [*args, *kwargs.values()]:
+#             if not isinstance(arg, int) and not isinstance(arg, float):
+#                 raise ValueError(f"Type of the {arg} is {type(arg)}",
+#                                  "All arguments must be int or float!")
+#         return fn(*args, **kwargs)
+
+#     return wrapper
+
+
+# @validate_args
+# def sum_nums(a, b):
+#     return a + b
+
+
+# try:
+#     print(sum_nums(7, 2))
+#     print(sum_nums(10.5, 2.3))
+#     print(sum_nums("Hello", 2))
+
+# except ValueError as e:
+#     print(e)
+
+# def is_user_auth():
+#     return True
+
+
+# def check_user_auth(fn):
+#     def wrapper(*args, **kwargs):
+
+#         if is_user_auth():
+#             print("User is authenticated!")
+#             return fn(*args, **kwargs)
+#         else:
+#             print("User is not authenticated!")  # User is not authenticated!
+#             # User is not authenticated!
+#             raise Exception("User is not authenticated!")
+
+#     return wrapper
+
+
+# @check_user_auth
+# def do_sensetive_job():
+#     # Do sth tasks only if user is authenticates
+#     print("Results of some sensetive tasks")
+
+
+# try:
+#     do_sensetive_job()
+# except Exception as e:
+#     print(e)
