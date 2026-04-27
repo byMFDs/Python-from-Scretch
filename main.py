@@ -3036,3 +3036,145 @@
 # second_path.unlink()
 
 # shutil.rmtree(my_folder)
+
+# from pathlib import Path
+
+# Path("my_files").mkdir()
+
+# with open("my_files/first.txt", "w") as my_file:
+#     my_file.write("My first file!")
+
+# with open("my_files/second.txt", "w") as my_file:
+#     my_file.write("My second file!")
+
+
+# Создание и распаковка ZIP архивов:
+
+
+# from zipfile import ZipFile
+# from pathlib import Path
+
+# with ZipFile("my_files.zip") as my_zip:
+# print(my_zip.filename)
+
+
+# .filename
+# .infolist()
+
+# Распаковывает ZIP архив:
+# with ZipFile("my_files.zip") as my_zip:
+#     my_zip.extractall("my_files_unzipped")
+
+# Запаковывает файли в ZIP архив:
+# with ZipFile("my_files.zip", mode = "w") as my_zip:
+#     for file in Path("my_files").iterdir():
+#         print(file)
+#         my_zip.write(file)
+
+
+# Работа с CSV файлами:
+
+# import csv
+
+# with open("test.csv", "w") as csv_file:
+#     writer = csv.writer(csv_file, delimiter=";")
+#     writer.writerow(["user_id", "user_name", "comments_qty"])
+#     writer.writerow([5, "danya", 1352])
+#     writer.writerow([96, "DakPro", 423])
+#     writer.writerow([5625, "alice", 7])
+
+
+# with open("test.csv") as csv_file:
+#     reader = csv.reader(csv_file, delimiter=";")
+#     for line in reader:
+#         print(line)
+
+#     print(reader.line_num)
+
+# print(reader)
+# print(type(reader))
+# for line in reader:
+#     print(line)
+
+
+# Модуль DateTime:
+
+
+# from datetime import date
+
+# my_date = date(2022, 4, 16)  # 2022-04-16
+# print(my_date)
+
+# print(my_date.isocalendar())  # (year=2022, week=15, weekday=6)
+
+
+# print(my_date.day)
+# print(my_date.year)
+# print(my_date.month)
+
+
+# from datetime import time
+
+# my_time = time(18, 12, 28)  # 18:12:28
+# print(my_time)
+
+# print(my_time.hour)
+# print(my_time.minute)
+# print(my_time.second)
+
+
+# from datetime import datetime, timedelta
+
+# my_datetime = datetime(2022, 12, 10, 18, 10, 45)
+
+# print(timedelta)
+
+# print(my_datetime + timedelta(days=100, hours=10, minutes=200, seconds=10))  # 2023-03-21 07:30:55
+# print(my_datetime - timedelta(days=100, hours=10, minutes=200, seconds=10))#2022-09-01 04:50:35
+
+
+# print(my_datetime)  # 2022-12-10 18:10:45
+
+# print(my_datetime.year)
+# print(my_datetime.second)
+# print(my_datetime.microsecond)
+
+# print(my_datetime.isoformat())  # 2022-12-10T18:10:45
+# print(my_datetime.now())  # 2026-04-27 22:05:50.
+# print(my_datetime.now())
+
+# print(my_datetime.strftime("%d/%m/%Y"))  # 10/12/2022
+# print(my_datetime.strftime("%d-%b-%Y %H:%M:%S"))  # 10-Dec-2022 18:10:45
+
+# date_str = "10/12/2022"
+
+# converted_date = datetime.strptime(date_str, "%d/%m/%Y")
+# print(converted_date)
+
+
+# time модуль:
+
+# import time
+
+# # print(time)  # <module 'time' (built-in)>
+
+# # print(time.time())#1777321348.043201
+
+# start_time = time.time()
+# print(time.ctime(25739940))  # Sun Oct 25 22:59:00 1970
+
+# time.sleep(3)  # secounds
+# end_time = time.time()
+# print(end_time - start_time)
+
+
+# import time
+
+# start_time = time.time()
+
+# my_sequence = range(1000000000)
+# print(my_sequence[1000])
+
+# end_time = time.time()
+
+# print("Total duration of the operation: ", end_time - start_time)
