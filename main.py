@@ -3178,3 +3178,97 @@
 # end_time = time.time()
 
 # print("Total duration of the operation: ", end_time - start_time)
+
+
+# Модуль Random
+
+# import random
+
+# print(random.random())  # генерирует число от нуля до еденицы
+
+# print(random.randint(1, 10))  # генерирует число от 1 до 10
+
+# print(random.choice("abcd"))  # выберает рандомную букву из СТРОКИ
+
+# print(random.choice([1, 2, 10]))  # выберает рандомное число из списка
+
+# print(random.choices([1, 2, 10, 5, 100], k=2))  # выберает рандомные два числа из списка
+
+
+# # .shuffle() # вона бере твій список і перемішує всі його елементи у випадковому порядку.
+# my_list = [1, 2, 10, 5, 100]
+# random.shuffle(my_list)
+# print(my_list)
+# random.shuffle(my_list)
+# print(my_list)
+
+# print("".join(random.choices("ABCdf123456789_/", k=3)))
+
+
+# import random
+
+# weapons = ["Звичайний меч", "Срібний меч", "Легендарний меч"]
+
+# # Налаштовуємо шанси (можна у відсотках або просто числах)
+# # Звичайний - 80 шансів, Срібний - 19 шансів, Легендарний - 1 шанс
+# chances = [80, 19, 1]
+
+# # Просимо 10 разів викинути зброю з цими шансами
+# loot = random.choices(weapons, weights=chances, k=10)
+
+# print(loot)
+# # Результат буде приблизно таким: 9 звичайних мечів і 1 срібний.
+# # Легендарний випадатиме вкрай рідко.
+
+
+# МОдуль генерации паролей secrets:
+
+# import string
+# import secrets
+
+# all_churs = string.ascii_letters + string.digits + string.punctuation
+# print("".join(secrets.choice(all_churs) for i in range(20)))
+
+# print(string.ascii_letters)  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+# print(string.digits)  # 0123456789
+# print(string.ascii_uppercase)  # ABCDEFGHIJKLMNOPQRSTUVWXYZ
+# print(string.ascii_lowercase)  # abcdefghijklmnopqrstuvwxyz
+# print(string.punctuation)
+
+# print(
+#     string.ascii_letters + string.digits + string.punctuation
+# )  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
+
+# Модуль math
+
+# import math
+
+# print(math.pi)  # 3.141592653589793
+# print(math.e)  # 2.718281828459045
+# print(math.sqrt(25))  # 5.0
+# print(math.log(100))  # 4.605170185988092
+# print(math.factorial(10))  # 3628800
+# print(dir(math))
+
+
+# Рекурсивная функция:
+
+
+# import math
+
+
+# def calc_factorial(num):
+#     if type(num) is not int:
+#         raise TypeError("Number must be integer!")
+#     if num <= 0:
+#         raise ValueError("Number must be positive!")
+#     if num == 1:
+#         return 1
+#     return calc_factorial(num - 1) * num
+
+
+# # calc_factorial("abc")
+# # calc_factorial(-10)
+# print(calc_factorial(10))  # 10! == 10*9*8*7*6*5...*1(3628800)
+# print(math.factorial(10))  # 3628800
