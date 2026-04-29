@@ -3272,3 +3272,64 @@
 # # calc_factorial(-10)
 # print(calc_factorial(10))  # 10! == 10*9*8*7*6*5...*1(3628800)
 # print(math.factorial(10))  # 3628800
+
+
+# Модуль re
+
+# import re
+
+# my_string = "My name is Danya. Danya is an instructor"
+
+
+# # result = re.search("Danya", my_string)
+# result = re.search(r"D...a\.$", my_string)
+
+# my_pattern = re.compile(r"D...a")
+
+# print(my_pattern)
+# print(my_pattern.findall(my_string))
+
+
+# # print(my_pattern.search(my_string))
+# print(my_pattern.match(my_string))
+
+# print(result)
+# print(result.span())
+# print(result.start())
+# print(result.end())
+
+
+import re
+
+
+def check_email(email):
+    email_regexp = r"^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
+    email_check_pattern = re.compile(email_regexp)
+    validation_result = "valid" if email_check_pattern.fullmatch(email) else "not valid"
+    return (email, validation_result)
+
+
+print(check_email("bs@gmail.com"))
+print(check_email("b_s@gmailcom"))
+print(check_email("b.s@gmail.com"))
+print(check_email("b.s@sub.gmail.com"))
+
+
+print(check_email("@gmail.com"))
+print(check_email("bs@gmailcom"))
+print(check_email("bs@"))
+print(check_email("bsgmail.com"))
+
+
+# Valid
+# print(email_check_pattern.fullmatch("bs@gmail.com"))
+# print(email_check_pattern.fullmatch("b_s@gmailcom"))
+# print(email_check_pattern.fullmatch("b.s@gmail.com"))
+# print(email_check_pattern.fullmatch("b.s@sub.gmail.com"))
+
+
+# Invalid
+# print(email_check_pattern.fullmatch("@gmail.com"))
+# print(email_check_pattern.fullmatch("bs@gmailcom"))
+# print(email_check_pattern.fullmatch("bs@"))
+# print(email_check_pattern.fullmatch("bsgmail.com"))
