@@ -3276,6 +3276,29 @@
 
 # Модуль re
 
+# \d	Цифра (digit). Від 0 до 9.\d знайде 5 у слові "Топ-5"
+# \D	НЕ цифра. Будь-який символ, буква, пробіл, але не цифра.\D знайде А у тексті "А1"
+# \w	Буква або цифра (word). Будь-яка літера, цифра або символ підкреслення _.\w знайде b та _ у тексті "a_b_1"
+# \W	НЕ буква і НЕ цифра. Наприклад, пробіли, коми, знаки оклику.\W знайде ! у тексті "Привіт!"
+# \s	Пробіл (space). Звичайний пробіл, табуляція або перенесення рядка.
+# .	Будь-який символ взагалі. (Крім перенесення на новий рядок).	м.т знайде мат, мот, м1т
+
+
+# +	1 або більше разів підряд	\d+ знайде ціле число 1000, а не просто одиницю. \w+ знайде ціле слово.
+# *	0 або більше разів	Тобто символ може повторюватися багато разів, а може і взагалі бути відсутнім.
+# ?	0 або 1 раз (Необов'язковий)	коти?к знайде і котик, і котк (буква "и" може бути, а може не бути).
+# {n}	Рівно N разів	\d{4} шукає рівно 4 цифри підряд (зручно для пошуку року: 2026).
+
+
+# ^	Початок рядка	^Привіт знайде слово "Привіт" тільки якщо воно стоїть у самому початку тексту.
+# $	Кінець рядка	кінець$ знайде слово "кінець" тільки якщо після нього текст закінчується.
+
+
+# [ ]	Один із набору	[АБВ] знайде або А, або Б, або В. [0-5] знайде будь-яку цифру від 0 до 5.
+# [^ ]	Будь-що, КРІМ набору (у дужках ^ працює як "НЕ")	[^0-9] знайде будь-який символ, який НЕ є цифрою.
+# **`	`**	АБО
+
+
 # import re
 
 # my_string = "My name is Danya. Danya is an instructor"
@@ -3299,26 +3322,26 @@
 # print(result.end())
 
 
-import re
+# import re
 
 
-def check_email(email):
-    email_regexp = r"^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
-    email_check_pattern = re.compile(email_regexp)
-    validation_result = "valid" if email_check_pattern.fullmatch(email) else "not valid"
-    return (email, validation_result)
+# def check_email(email):
+#     email_regexp = r"^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
+#     email_check_pattern = re.compile(email_regexp)
+#     validation_result = "valid" if email_check_pattern.fullmatch(email) else "not valid"
+#     return (email, validation_result)
 
 
-print(check_email("bs@gmail.com"))
-print(check_email("b_s@gmailcom"))
-print(check_email("b.s@gmail.com"))
-print(check_email("b.s@sub.gmail.com"))
+# print(check_email("bs@gmail.com"))
+# print(check_email("b_s@gmailcom"))
+# print(check_email("b.s@gmail.com"))
+# print(check_email("b.s@sub.gmail.com"))
 
 
-print(check_email("@gmail.com"))
-print(check_email("bs@gmailcom"))
-print(check_email("bs@"))
-print(check_email("bsgmail.com"))
+# print(check_email("@gmail.com"))
+# print(check_email("bs@gmailcom"))
+# print(check_email("bs@"))
+# print(check_email("bsgmail.com"))
 
 
 # Valid
@@ -3333,3 +3356,53 @@ print(check_email("bsgmail.com"))
 # print(email_check_pattern.fullmatch("bs@gmailcom"))
 # print(email_check_pattern.fullmatch("bs@"))
 # print(email_check_pattern.fullmatch("bsgmail.com"))
+
+
+# D/Z:
+
+import re
+
+
+# 1. Створюємо функцію для перевірки пароля
+def check_password(password):
+
+    # 2. Пароль має бути мінімум 8 символів
+    # len() рахує кількість символів
+    if len(password) < 8:
+        print("❌ Помилка: Пароль занадто короткий (мінімум 8 символів).")
+        return False
+
+    # 3. Перевіряємо малі літери
+    # Шукаємо хоча б одну букву від a до z
+    if not re.search(r"[a-z]", password):
+        print("❌ Помилка: Додайте хоча б одну малу літеру.")
+        return False
+
+    # Перевіряємо великі літери
+    # Шукаємо хоча б одну букву від A до Z
+    if not re.search(r"[A-Z]", password):
+        print("❌ Помилка: Додайте хоча б одну велику літеру.")
+        return False
+
+    # Перевіряємо цифри
+    # \d означає "будь-яка цифра"
+    if not re.search(r"\d", password):
+        print("❌ Помилка: Додайте хоча б одну цифру.")
+        return False
+
+    # Перевіряємо спеціальні символи
+    # \W (велика W) означає "будь-що, що НЕ є буквою і НЕ є цифрою" (тобто !, @, #, $, тощо)
+    if not re.search(r"\W", password):
+        print("❌ Помилка: Додайте хоча б один спеціальний символ.")
+        return False
+
+    # Якщо код дійшов сюди і не повернув False, значить все ідеально!
+    print("✅ Успіх: Ваш пароль супернадійний!")
+    return True
+
+
+# 4. Просимо користувача ввести пароль у терміналі
+user_input = input("Придумайте пароль: ")
+
+# Відправляємо введений пароль у нашу функцію на перевірку
+check_password(user_input)
