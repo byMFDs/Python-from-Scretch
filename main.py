@@ -3360,49 +3360,166 @@
 
 # D/Z:
 
-import re
+# import re
 
 
-# 1. Створюємо функцію для перевірки пароля
-def check_password(password):
+# # 1. Створюємо функцію для перевірки пароля
+# def check_password(password):
 
-    # 2. Пароль має бути мінімум 8 символів
-    # len() рахує кількість символів
-    if len(password) < 8:
-        print("❌ Помилка: Пароль занадто короткий (мінімум 8 символів).")
-        return False
+#     # 2. Пароль має бути мінімум 8 символів
+#     # len() рахує кількість символів
+#     if len(password) < 8:
+#         print("❌ Помилка: Пароль занадто короткий (мінімум 8 символів).")
+#         return False
 
-    # 3. Перевіряємо малі літери
-    # Шукаємо хоча б одну букву від a до z
-    if not re.search(r"[a-z]", password):
-        print("❌ Помилка: Додайте хоча б одну малу літеру.")
-        return False
+#     # 3. Перевіряємо малі літери
+#     # Шукаємо хоча б одну букву від a до z
+#     if not re.search(r"[a-z]", password):
+#         print("❌ Помилка: Додайте хоча б одну малу літеру.")
+#         return False
 
-    # Перевіряємо великі літери
-    # Шукаємо хоча б одну букву від A до Z
-    if not re.search(r"[A-Z]", password):
-        print("❌ Помилка: Додайте хоча б одну велику літеру.")
-        return False
+#     # Перевіряємо великі літери
+#     # Шукаємо хоча б одну букву від A до Z
+#     if not re.search(r"[A-Z]", password):
+#         print("❌ Помилка: Додайте хоча б одну велику літеру.")
+#         return False
 
-    # Перевіряємо цифри
-    # \d означає "будь-яка цифра"
-    if not re.search(r"\d", password):
-        print("❌ Помилка: Додайте хоча б одну цифру.")
-        return False
+#     # Перевіряємо цифри
+#     # \d означає "будь-яка цифра"
+#     if not re.search(r"\d", password):
+#         print("❌ Помилка: Додайте хоча б одну цифру.")
+#         return False
 
-    # Перевіряємо спеціальні символи
-    # \W (велика W) означає "будь-що, що НЕ є буквою і НЕ є цифрою" (тобто !, @, #, $, тощо)
-    if not re.search(r"\W", password):
-        print("❌ Помилка: Додайте хоча б один спеціальний символ.")
-        return False
+#     # Перевіряємо спеціальні символи
+#     # \W (велика W) означає "будь-що, що НЕ є буквою і НЕ є цифрою" (тобто !, @, #, $, тощо)
+#     if not re.search(r"\W", password):
+#         print("❌ Помилка: Додайте хоча б один спеціальний символ.")
+#         return False
 
-    # Якщо код дійшов сюди і не повернув False, значить все ідеально!
-    print("✅ Успіх: Ваш пароль супернадійний!")
-    return True
+#     # Якщо код дійшов сюди і не повернув False, значить все ідеально!
+#     print("✅ Успіх: Ваш пароль супернадійний!")
+#     return True
 
 
-# 4. Просимо користувача ввести пароль у терміналі
-user_input = input("Придумайте пароль: ")
+# # 4. Просимо користувача ввести пароль у терміналі
+# user_input = input("Придумайте пароль: ")
 
-# Відправляємо введений пароль у нашу функцію на перевірку
-check_password(user_input)
+# # Відправляємо введений пароль у нашу функцію на перевірку
+# check_password(user_input)
+
+
+# Отправка e-mail с помощью модуля smtplib:
+
+# import smtplib
+# from email.message import EmailMessage
+
+# my_email = EmailMessage()
+
+# my_email["from"] = "Daniel"
+# my_email["to"] = "bymfd@gmail.com"
+# my_email["subject"] = "Hello friend..."
+# my_email.set_content("The guys who play god without permissions")
+
+# with smtplib.SMTP(host="localhost", port=2525) as smtp_server:
+#     smtp_server.ehlo()
+#     # smtp_server.starttls()
+#     # smtp_server.login("username", "password")
+
+#     smtp_server.send_message(my_email)
+#     print("Email was sent!")
+
+
+# import smtplib
+# from email.message import EmailMessage
+
+# # 1. Створюємо сам лист
+# my_email = EmailMessage()
+
+# # ТУТ ВКАЖИ СВІЙ EMAIL (від кого)
+# my_email["from"] = "batman@gmail.com"
+
+# # ТУТ ВКАЖИ EMAIL ОТРИМУВАЧА (можеш відправити самому собі)
+# my_email["to"] = "danilo.lviv2009@gmail.com"
+
+# my_email["subject"] = "Привіт з мого першого Python-скрипта! 🚀"
+# my_email.set_content(
+#     "Ура! Я навчився відправляти реальні листи через Python. Це працює!"
+# )
+
+# # 2. Налаштовуємо підключення до серверів Google
+# EMAIL_ADDRESS = "danilo.lviv2009@gmail.com"
+# # Встав сюди свої 16 букв пароля додатка (без пробілів)
+# EMAIL_PASSWORD = "zffjgtqvrjkewswk"
+
+# # Підключаємося до сервера Gmail на порт 587
+# with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp_server:
+#     smtp_server.ehlo()
+
+#     # ОБОВ'ЯЗКОВО вмикаємо шифрування, інакше Google відхилить підключення
+#     smtp_server.starttls()
+
+#     # Логінимося на сервер
+#     smtp_server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+
+#     # Відправляємо наш лист
+#     smtp_server.send_message(my_email)
+
+#     print("✅ Лист успішно відправлено! Перевіряй пошту на телефоні.")
+
+
+# HTML шаблоны для отправки email:
+
+# import smtplib
+# from email.message import EmailMessage
+# from string import Template
+# from pathlib import Path
+
+# my_email = EmailMessage()
+
+# html_template = Template(Path("templates/index.html").read_text())
+# html_content = html_template.substitute({"name": "Danya", "date": "today"})
+
+# my_email["from"] = "Daniel"
+# my_email["to"] = "bymfd@gmail.com"
+# my_email["subject"] = "Hello friend..."
+# my_email.set_content(html_content, "html")
+
+# with smtplib.SMTP(host="localhost", port=2525) as smtp_server:
+#     smtp_server.ehlo()
+#     # smtp_server.starttls()
+#     # smtp_server.login("username", "password")
+
+#     smtp_server.send_message(my_email)
+#     print("Email was sent!")
+
+
+# Отправка вложений в email:
+
+import smtplib
+from email.message import EmailMessage
+from string import Template
+from pathlib import Path
+
+my_email = EmailMessage()
+
+html_template = Template(Path("templates/index.html").read_text())
+html_content = html_template.substitute({"name": "Danya", "date": "today"})
+
+my_email["from"] = "Daniel <dyadya_bogdan@gmail.com>"
+my_email["to"] = "bymfd@gmail.com"
+my_email["subject"] = "Vitaju"
+my_email.set_content(html_content, "html")
+
+with open("images/email.gif", "rb") as img:
+    image_data = img.read()
+    my_email.add_attachment(
+        image_data, maintype="image", subtype="gif", filename="email.gif"
+    )
+
+with smtplib.SMTP(host="localhost", port=2525) as smtp_server:
+    smtp_server.ehlo()
+    # smtp_server.starttls()
+    # smtp_server.login("username", "password")
+
+    smtp_server.send_message(my_email)
+    print("Email was sent!")
