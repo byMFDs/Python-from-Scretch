@@ -3495,31 +3495,147 @@
 
 # Отправка вложений в email:
 
-import smtplib
-from email.message import EmailMessage
-from string import Template
-from pathlib import Path
+# import smtplib
+# from email.message import EmailMessage
+# from string import Template
+# from pathlib import Path
 
-my_email = EmailMessage()
+# my_email = EmailMessage()
 
-html_template = Template(Path("templates/index.html").read_text())
-html_content = html_template.substitute({"name": "Danya", "date": "today"})
+# html_template = Template(Path("templates/index.html").read_text())
+# html_content = html_template.substitute({"name": "Danya", "date": "today"})
 
-my_email["from"] = "Daniel <dyadya_bogdan@gmail.com>"
-my_email["to"] = "bymfd@gmail.com"
-my_email["subject"] = "Vitaju"
-my_email.set_content(html_content, "html")
+# my_email["from"] = "Daniel <dyadya_bogdan@gmail.com>"
+# my_email["to"] = "bymfd@gmail.com"
+# my_email["subject"] = "Vitaju"
+# my_email.set_content(html_content, "html")
 
-with open("images/email.gif", "rb") as img:
-    image_data = img.read()
-    my_email.add_attachment(
-        image_data, maintype="image", subtype="gif", filename="email.gif"
-    )
+# with open("images/email.gif", "rb") as img:
+#     image_data = img.read()
+#     my_email.add_attachment(
+#         image_data, maintype="image", subtype="gif", filename="email.gif"
+#     )
 
-with smtplib.SMTP(host="localhost", port=2525) as smtp_server:
-    smtp_server.ehlo()
-    # smtp_server.starttls()
-    # smtp_server.login("username", "password")
+# with smtplib.SMTP(host="localhost", port=2525) as smtp_server:
+#     smtp_server.ehlo()
+#     # smtp_server.starttls()
+#     # smtp_server.login("username", "password")
 
-    smtp_server.send_message(my_email)
-    print("Email was sent!")
+#     smtp_server.send_message(my_email)
+#     print("Email was sent!")
+
+
+#
+
+
+# Модуль SQLITE3:
+
+
+# import sqlite3
+
+# DB_NAME = "sqlite_db.db"
+
+# with sqlite3.connect(DB_NAME) as sqlite_connection:
+#     sql_requests = "SELECT * FROM courses WHERE reviews_qty >= 100"
+#     sql_cursor = sqlite_connection.execute(sql_requests)
+#     # for record in sql_cursor:
+#     #     print(record[1])
+#     courses = sql_cursor.fetchall()
+#     print(courses)
+
+# # Add records to the Courses Table:
+# courses = [
+#     (351, "JavaScript course", 400, 100),
+#     (562, "C++ course", 1000, 200),
+#     (652, "Java course", 10, 50),
+# ]
+
+# with sqlite3.connect(DB_NAME) as sqlite_connection:
+#     sql_request = "INSERT INTO courses VALUES(?, ?, ?, ?)"
+#     for course in courses:
+#         sqlite_connection.execute(sql_request, course)
+#     sqlite_connection.commit()#Сороняет в базе данных
+
+
+# # Create New Table:
+# with sqlite3.connect(DB_NAME) as sqlite_connection:
+#     sql_request = """CREATE TABLE IF NOT EXISTS courses (
+#         id integer PRIMARY KEY,
+#         title text NOT NULL,
+#         students_qty integer,
+#         reviews_qty integer
+#     );"""
+
+#     sqlite_connection.execute(sql_request)
+
+
+# Модуль ARRAY:
+
+# from array import array
+
+# my_int_array = array("i", [4, 5, 1, 10, 5, 6])
+# print(my_int_array)
+# print(type(my_int_array))
+
+# my_int_array.append(16)
+# print(my_int_array)
+
+# my_int_array.append("hELLO")
+# print(my_int_array)#TypeError: 'str' object cannot be interpreted as an integer
+
+# print(my_int_array.count(5))
+# my_int_array.pop()
+
+# print(my_int_array)
+# print(len(my_int_array))
+
+# for element in my_int_array:
+#     print(element)
+
+# print(my_int_array[2])
+
+
+# from array import array
+
+# my_int_array = array("i", [4, 5, 1, 10, 5, 6])
+
+# with open("my_array.bin", "wb") as my_file:
+#     my_int_array.tofile(my_file)
+
+# imported_array = array("i")
+
+# with open("my_array.bin", "rb") as my_file:
+#     imported_array.fromfile(my_file, 3)
+#     print(imported_array)
+
+
+# imported_array.reverse()
+# print(imported_array)
+
+
+# D/Z:
+
+
+# Модуль sys:
+
+# import sys
+
+# print(sys.argv)
+
+# if len(sys.argv) < 3:
+#     raise IOError("You must provide your username and passwd!")
+
+# # username = sys.argv[1]
+# # passwd = sys.argv[2]
+
+# filename, username, password = sys.argv
+
+# print(username, password)
+
+
+# Модуль webbroser:
+
+# import webbrowser
+
+# webbrowser.open("https://github.com")
+# #webbrowser.open("https://pypi.org")
