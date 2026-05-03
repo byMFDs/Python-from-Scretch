@@ -3651,3 +3651,26 @@
 
 # webbrowser.open("https://github.com")
 # #webbrowser.open("https://pypi.org")
+
+
+# PIP - Package manager For Python
+
+# import pygame
+
+# print("Ура! Pygame встановлено!")
+
+# pygame.init()
+
+
+# Виртуальная среда разработки с помощью PIPENV
+
+
+# Использование пакетов в виртуально среде
+
+# import requests
+
+# my_request = requests.get("https://www.python.org")
+
+# print(my_request)
+# print(my_request.text)
+# print(my_request.status_code)
