@@ -3615,6 +3615,18 @@
 
 # D/Z:
 
+# from array import array
+# import sys
+
+# file_name = sys.argv[1]
+
+# my_array = array("i")
+
+# with open(file_name, "rb") as my_file:
+#     my_array.fromfile(my_file, 2)
+
+# print(my_array)
+
 
 # Модуль sys:
 
